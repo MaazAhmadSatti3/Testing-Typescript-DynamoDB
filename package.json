@@ -4,18 +4,22 @@
   "description": "Serverless aws-nodejs-typescript template",
   "main": "serverless.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "engines": {
     "node": ">=14.15.0"
   },
   "dependencies": {
+    "@jest/types": "^27.2.5",
     "@middy/core": "^1.5.2",
     "@middy/http-json-body-parser": "^1.5.2",
     "@types/aws-sdk": "^2.7.0",
+    "@types/jest": "^27.0.2",
     "@types/uuid": "^8.3.1",
     "aws-sdk": "^2.1007.0",
+    "jest": "^27.3.1",
     "serverless-dynamodb-local": "^0.2.40",
+    "ts-jest": "^27.0.7",
     "uuid": "^8.3.2"
   },
   "devDependencies": {

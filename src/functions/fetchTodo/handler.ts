@@ -1,12 +1,11 @@
-import type { ValidatedEventAPIGatewayProxyEvent } from "@libs/apiGateway";
+// import type { ValidatedEventAPIGatewayProxyEvent } from "@libs/apiGateway";
 import { formatJSONResponse } from "@libs/apiGateway";
 import { middyfy } from "@libs/lambda";
-import { fetchTodo } from "src/common/dynamodb";
-import schema from "@functions/fetchTodo/schema";
+import { Handler } from "aws-lambda";
+import { fetchTodo } from "../../common/dynamodb";
+// import schema from "@functions/fetchTodo/schema";
 
-const fetchTodoH: ValidatedEventAPIGatewayProxyEvent<typeof schema> = async (
-  event
-) => {
+export const fetchTodoH: Handler = async (event) => {
   const { id }: any = event.body;
 
   let user = await fetchTodo(id).catch((err) => {

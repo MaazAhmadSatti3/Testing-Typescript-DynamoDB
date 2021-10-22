@@ -1,12 +1,11 @@
-import type { ValidatedEventAPIGatewayProxyEvent } from "@libs/apiGateway";
+// import type { ValidatedEventAPIGatewayProxyEvent } from "@libs/apiGateway";
 import { formatJSONResponse } from "@libs/apiGateway";
 import { middyfy } from "@libs/lambda";
 import { deleteTodo } from "../../common/dynamodb";
-import schema from "@functions/deleteTodo/schema";
+// import schema from "@functions/deleteTodo/schema";
+import { Handler } from "aws-lambda";
 
-const deleteTodoH: ValidatedEventAPIGatewayProxyEvent<typeof schema> = async (
-  event
-) => {
+export const deleteTodoH: Handler = async (event) => {
   const { id } = event.body;
 
   const response = deleteTodo(id);
