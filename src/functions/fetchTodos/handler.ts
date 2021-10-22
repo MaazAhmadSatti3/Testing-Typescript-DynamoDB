@@ -15,5 +15,4 @@ const fetchTodosH = async () => {
 
   return formatJSONResponse({ message: user });
 };
-
 export const main = middyfy(fetchTodosH);
